@@ -221,10 +221,7 @@ const writeToFile = (outputName: string, processedData: Buffer) => {
 ;(async () => {
     // FAST EXECUTION
     if (process.argv.slice(2).length > 0) {
-        console.log(process.argv)
-
         let [inputName, mode, outputName] = process.argv.slice(2)
-        console.log(inputName, mode, outputName)
         let data = await readFile(inputName)
         let processedData = execute(data, mode)
         if (outputName !== undefined) writeToFile(outputName, processedData)
